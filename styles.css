@@ -615,6 +615,22 @@ html {
     overflow-x: hidden;
 }
 
+/* Hide scrollbar for webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+/* Hide scrollbar for Firefox */
+html {
+    scrollbar-width: none;
+}
+
+/* Hide scrollbar for IE and Edge */
+body {
+    -ms-overflow-style: none;
+}
+
 .footer h5 {
     color: var(--primary-light) !important;
     font-weight: 700;
