@@ -771,13 +771,13 @@ section {
     object-position: center;
 }
 
-.founder-card:hover .founder-image {
+/* .founder-card:hover .founder-image {
     transform: rotate(0deg) scale(1.05);
-}
+} */
 
 .founder-card:hover .founder-image-container img[src*="DSC03447.jpg"],
 .founder-card:hover .founder-image-container img[src*="DSC03465.jpg"] {
-    transform: rotate(0deg) scale(1.05);
+   
 }
 
 .founder-overlay {
