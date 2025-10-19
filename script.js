@@ -165,13 +165,15 @@ function updateActiveNavigation() {
 
 // ===== PROPERTY CARDS FUNCTIONALITY =====
 function initPropertyCards() {
-    const propertyCards = document.querySelectorAll('.property-card');
+    const viewDetailsBtns = document.querySelectorAll('.view-details-btn');
     
-    propertyCards.forEach(card => {
-        // Add click functionality
-        card.addEventListener('click', function() {
-            const propertyName = this.querySelector('h5').textContent;
-            showPropertyModal(propertyName);
+    viewDetailsBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent card click event
+            const propertyCard = this.closest('.property-card');
+            const propertyId = propertyCard.getAttribute('data-property');
+            const propertyName = propertyCard.querySelector('h5').textContent;
+            showPropertyModal(propertyId, propertyName);
         });
     });
 }
@@ -206,12 +208,15 @@ function initFormHandlers() {
 function showEnquiryModal() {
     const modal = document.createElement('div');
     modal.className = 'modal fade';
+    modal.setAttribute('tabindex', '-1');
+    modal.setAttribute('aria-labelledby', 'enquiryModalLabel');
+    modal.setAttribute('aria-hidden', 'true');
     modal.innerHTML = `
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content rounded-4 border-0 shadow-lg">
                 <div class="modal-header border-0 pb-0">
-                    <h4 class="modal-title fw-bold text-primary">Request a Call Back</h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <h4 class="modal-title fw-bold text-primary" id="enquiryModalLabel">Request a Call Back</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body pt-0">
                     <form class="enquiry-form">
@@ -243,8 +248,11 @@ function showEnquiryModal() {
                                 <textarea class="form-control rounded-3" rows="4" placeholder="Tell us about your requirements..."></textarea>
                             </div>
                         </div>
-                        <div class="d-grid gap-2 mt-4">
-                            <button type="submit" class="btn btn-primary btn-lg rounded-pill">
+                        <div class="d-flex gap-2 mt-4">
+                            <button type="button" class="btn btn-outline-secondary btn-lg rounded-pill flex-fill" data-bs-dismiss="modal">
+                                <i class="bi bi-x-circle me-2"></i>Cancel
+                            </button>
+                            <button type="submit" class="btn btn-primary btn-lg rounded-pill flex-fill">
                                 <i class="bi bi-telephone me-2"></i>Submit Enquiry
                             </button>
                         </div>
@@ -288,35 +296,130 @@ function showEnquiryModal() {
     });
 }
 
-function showPropertyModal(propertyName) {
+function showPropertyModal(propertyId, propertyName) {
+    // Property data configuration
+    const propertyData = {
+        'naikwadi-mall': {
+            image: 'img/Naikwadi Mall.jpg',
+            title: 'Naikwadi Mall',
+            location: 'Premium Location',
+            type: 'City Mall',
+            price: '₹2.5 Cr',
+            details: [
+                'Modern Shopping Complex',
+                'Prime Commercial Location',
+                'Multiple Retail Spaces',
+                'Parking Facilities Available'
+            ],
+            features: [
+                'Premium Location',
+                'Modern Architecture',
+                'Commercial Spaces',
+                'High Footfall Area'
+            ]
+        },
+        'patil-hospital': {
+            image: 'img/PATIL HOSPITAL.jpg',
+            title: 'Patil Hospital',
+            location: 'Business District',
+            type: 'Commercial',
+            price: '₹5 Cr',
+            details: [
+                'State-of-the-art Medical Facility',
+                'Strategic Business Location',
+                'Modern Healthcare Infrastructure',
+                'Easy Accessibility'
+            ],
+            features: [
+                'Medical Infrastructure',
+                'Business District Location',
+                'Modern Facilities',
+                'Healthcare Services'
+            ]
+        },
+        'swapnapurti-house': {
+            image: 'img/Swapnapurti House luxary .jpg',
+            title: 'Swapnapurti House Luxury',
+            location: 'Luxury District',
+            type: 'Premium',
+            price: '₹10 Cr',
+            details: [
+                'Ultra-luxury Residential Complex',
+                'Premium Location',
+                'High-end Amenities',
+                'Exclusive Living Experience'
+            ],
+            features: [
+                'Luxury Living',
+                'Premium Amenities',
+                'Exclusive Location',
+                'High-end Finishes'
+            ]
+        },
+        'luxury-bellagio': {
+            image: 'img/1000963910.jpg',
+            title: 'Luxury Bellagio',
+            location: 'Lake View',
+            type: 'Luxury',
+            price: '₹3.5 Cr',
+            details: [
+                'Luxury Residential Complex',
+                'Scenic Lake View',
+                'Premium Amenities',
+                'Modern Architecture'
+            ],
+            features: [
+                'Lake View Property',
+                'Luxury Amenities',
+                'Modern Design',
+                'Premium Location'
+            ]
+        }
+    };
+
+    const property = propertyData[propertyId] || propertyData['naikwadi-mall'];
+    
     const modal = document.createElement('div');
     modal.className = 'modal fade';
+    modal.setAttribute('tabindex', '-1');
+    modal.setAttribute('aria-labelledby', 'propertyModalLabel');
+    modal.setAttribute('aria-hidden', 'true');
     modal.innerHTML = `
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content rounded-4 border-0 shadow-lg">
                 <div class="modal-header border-0 pb-0">
-                    <h4 class="modal-title fw-bold text-primary">${propertyName}</h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <h4 class="modal-title fw-bold text-primary" id="propertyModalLabel">${property.title}</h4>
+                    <button type="button" class="btn-close property-modal-header-close" aria-label="Close"></button>
                 </div>
                 <div class="modal-body pt-0">
                     <div class="row g-4">
                         <div class="col-md-6">
-                            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                                 class="img-fluid rounded-3" alt="${propertyName}">
+                            <img src="${property.image}" 
+                                 class="img-fluid rounded-3" alt="${property.title}" style="max-height: 400px; object-fit: cover;">
                         </div>
                         <div class="col-md-6">
                             <h5 class="fw-bold mb-3">Property Details</h5>
                             <ul class="list-unstyled">
-                                <li class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i>Premium Location</li>
-                                <li class="mb-2"><i class="bi bi-house text-primary me-2"></i>Luxury Apartments</li>
-                                <li class="mb-2"><i class="bi bi-rulers text-primary me-2"></i>2-4 BHK Available</li>
-                                <li class="mb-2"><i class="bi bi-calendar text-primary me-2"></i>Ready to Move</li>
+                                ${property.details.map(detail => 
+                                    `<li class="mb-2"><i class="bi bi-check-circle text-primary me-2"></i>${detail}</li>`
+                                ).join('')}
                             </ul>
                             <div class="mt-4">
-                                <h6 class="fw-bold text-primary">Starting from ₹2.5 Cr</h6>
-                                <button class="btn btn-primary rounded-pill mt-2">
-                                    <i class="bi bi-telephone me-2"></i>Schedule Visit
-                                </button>
+                                <h6 class="fw-bold text-primary mb-2">Key Features</h6>
+                                <div class="d-flex flex-wrap gap-2 mb-3">
+                                    ${property.features.map(feature => 
+                                        `<span class="badge bg-primary bg-opacity-10 text-primary">${feature}</span>`
+                                    ).join('')}
+                                </div>
+                                <h6 class="fw-bold text-primary">Starting from ${property.price}</h6>
+                                <div class="d-flex gap-2 mt-3">
+                                    <button type="button" class="btn btn-outline-secondary rounded-pill property-modal-close">
+                                        <i class="bi bi-x-circle me-2"></i>Close
+                                    </button>
+                                    <button class="btn btn-primary rounded-pill">
+                                        <i class="bi bi-telephone me-2"></i>Schedule Visit
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -330,8 +433,34 @@ function showPropertyModal(propertyName) {
     const bsModal = new bootstrap.Modal(modal);
     bsModal.show();
     
+    // Add event listener for the close button
+    const closeBtn = modal.querySelector('.property-modal-close');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+            bsModal.hide();
+        });
+    }
+    
+    // Add event listener for the header close button (X)
+    const headerCloseBtn = modal.querySelector('.property-modal-header-close');
+    if (headerCloseBtn) {
+        headerCloseBtn.addEventListener('click', function() {
+            bsModal.hide();
+        });
+    }
+    
+    // Add support for Escape key to close modal
+    const handleEscapeKey = function(e) {
+        if (e.key === 'Escape') {
+            bsModal.hide();
+            document.removeEventListener('keydown', handleEscapeKey);
+        }
+    };
+    document.addEventListener('keydown', handleEscapeKey);
+    
     // Remove modal when hidden
     modal.addEventListener('hidden.bs.modal', function() {
+        document.removeEventListener('keydown', handleEscapeKey);
         modal.remove();
     });
 }
@@ -342,8 +471,9 @@ function showChatWidget() {
     chatWidget.className = 'position-fixed bottom-0 end-0 m-4';
     chatWidget.innerHTML = `
         <div class="card shadow-lg rounded-4" style="width: 300px;">
-            <div class="card-header bg-primary text-white rounded-top-4">
+            <div class="card-header bg-primary text-white rounded-top-4 d-flex justify-content-between align-items-center">
                 <h6 class="mb-0"><i class="bi bi-chat-dots me-2"></i>Live Chat</h6>
+                <button type="button" class="btn-close btn-close-white" aria-label="Close" onclick="this.closest('.position-fixed').remove()"></button>
             </div>
             <div class="card-body">
                 <p class="mb-3">Hi! How can we help you today?</p>
@@ -353,16 +483,23 @@ function showChatWidget() {
                         <i class="bi bi-send"></i>
                     </button>
                 </div>
+                <div class="d-flex justify-content-end mt-2">
+                    <button type="button" class="btn btn-outline-secondary btn-sm" onclick="this.closest('.position-fixed').remove()">
+                        <i class="bi bi-x-circle me-1"></i>Close Chat
+                    </button>
+                </div>
             </div>
         </div>
     `;
     
     document.body.appendChild(chatWidget);
     
-    // Auto-remove after 10 seconds
+    // Auto-remove after 30 seconds (increased from 10 seconds)
     setTimeout(() => {
-        chatWidget.remove();
-    }, 10000);
+        if (chatWidget.parentNode) {
+            chatWidget.remove();
+        }
+    }, 30000);
 }
 
 // ===== UTILITY FUNCTIONS =====
@@ -408,5 +545,22 @@ document.addEventListener('keydown', function(e) {
                 bsModal.hide();
             }
         });
+        
+        // Also close chat widget with Escape key
+        const chatWidget = document.querySelector('.position-fixed.bottom-0.end-0');
+        if (chatWidget) {
+            chatWidget.remove();
+        }
+    }
+});
+
+// ===== MODAL BACKDROP CLICK HANDLER =====
+document.addEventListener('click', function(e) {
+    // Close modals when clicking outside
+    if (e.target.classList.contains('modal')) {
+        const bsModal = bootstrap.Modal.getInstance(e.target);
+        if (bsModal) {
+            bsModal.hide();
+        }
     }
 });
