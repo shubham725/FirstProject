@@ -764,7 +764,7 @@ section {
 /* Ensure proper orientation for founder images */
 .founder-image-container img[src*="DSC03447.jpg"],
 .founder-image-container img[src*="DSC03465.jpg"] {
-    transform: rotate(90deg);
+    transform: rotate(0deg);
     width:100%;
     height: 100%;
     object-fit: cover;
