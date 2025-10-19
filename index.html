@@ -14,10 +14,10 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     
-    <!-- Google Fonts -->
+    <!-- Google Fonts - Professional Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Merriweather:wght@300;400;700;900&family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -31,12 +31,12 @@
     
     <!-- Header -->
     <header class="header" id="header">
-        <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
             <div class="container">
                 <!-- Logo -->
                 <a class="navbar-brand" href="#home">
                     <div class="logo-icon">
-                   <img src="img/const logo (3).png" alt="">
+                   <img src="img/const logo (3).png" alt="" fetchpriority="high">
                     </div>
                 </a>
 
@@ -71,6 +71,9 @@
                             </ul>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="#founders">Founders</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="#careers">Careers</a>
                         </li>
                     </ul>
@@ -95,15 +98,15 @@
     <!-- Hero Section -->
     <section class="hero" id="main-content">
         <div class="hero-background">
-            <div class="hero-slider">
-                <img src="img/1000963893.jpg" alt="Luxury Real Estate" class="slide active">
-                <img src="img/1000963894.jpg" alt="Luxury Real Estate" class="slide">
-                <img src="img/1000963895.jpg" alt="Luxury Real Estate" class="slide">
-                <img src="img/1000963896.jpg" alt="Luxury Real Estate" class="slide">
-                <img src="img/1000963897.jpg" alt="Luxury Real Estate" class="slide">
-                <img src="img/1000963898.jpg" alt="Luxury Real Estate" class="slide">
-                <img src="img/1000963899.jpg" alt="Luxury Real Estate" class="slide">
-                <img src="img/1000963900.jpg" alt="Luxury Real Estate" class="slide">
+                <div class="hero-slider">
+                <img src="img/1000963893.jpg" alt="Luxury Real Estate" class="slide active" loading="eager" fetchpriority="high">
+                <img src="img/1000963894.jpg" alt="Luxury Real Estate" class="slide" loading="lazy" decoding="async">
+                <img src="img/1000963895.jpg" alt="Luxury Real Estate" class="slide" loading="lazy" decoding="async">
+                <img src="img/1000963896.jpg" alt="Luxury Real Estate" class="slide" loading="lazy" decoding="async">
+                <img src="img/1000963897.jpg" alt="Luxury Real Estate" class="slide" loading="lazy" decoding="async">
+                <img src="img/1000963898.jpg" alt="Luxury Real Estate" class="slide" loading="lazy" decoding="async">
+                <img src="img/1000963899.jpg" alt="Luxury Real Estate" class="slide" loading="lazy" decoding="async">
+                <img src="img/1000963900.jpg" alt="Luxury Real Estate" class="slide" loading="lazy" decoding="async">
             </div>
             <div class="hero-overlay"></div>
         </div>
@@ -111,10 +114,10 @@
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title">
-                    Creating the world's <span class="text-gradient">finest</span> developments
+                    A step <span class="text-gradient">towards</span> sustainable development
                 </h1>
                 <p class="hero-subtitle">
-                    Premium real estate developer delivering thoughtfully designed, luxury properties that redefine urban living
+                    Premium real estate developers redefining infrastructure excellence
                 </p>
                 <div class="hero-actions">
                     <button class="btn btn-secondary btn-lg ">
@@ -125,15 +128,15 @@
                 <!-- Stats -->
                 <div class="hero-stats ">
                     <div class="stat-item ">
-                        <h3 class="text-light">500+</h3>
+                        <h3 class="text-light">50+</h3>
                         <small class="text-light">Projects Completed</small>
                     </div>
                     <div class="stat-item">
-                        <h3 class="text-light">25+</h3>
+                        <h3 class="text-light">5+</h3>
                         <small class="text-light">Years Experience</small>
                     </div>
                     <div class="stat-item">
-                        <h3 class="text-light">50K+</h3>
+                        <h3 class="text-light">50+</h3>
                         <small class="text-light">Happy Families</small>
                     </div>
                 </div>
@@ -154,10 +157,10 @@
                 <div class="col-lg-6">
                     <div class="content-image">
                         <img src="img/1000963901.jpg" 
-                             alt="Our Promise" class="img-fluid">
+                             alt="Our Promise" class="img-fluid" loading="lazy" decoding="async">
                         <div class="floating-badge">
                             <div class="badge bg-primary">
-                                <i class="bi bi-award me-1"></i>25+ Years
+                                <i class="bi bi-award me-1"></i>5+ Years
                             </div>
                         </div>
                     </div>
@@ -168,10 +171,11 @@
                             OUR PROMISE
                         </span>
                         <h2 class="section-title">
-                            Creating the world's <span class="text-gradient">finest</span> developments
+                            
+                            Redefining infrastructure  <span class="text-gradient">excellence</span> — building foundations, shaping futures.
                         </h2>
                         <p class="section-description">
-                            We are India's leading real estate developer, delivering thoughtfully designed, premium properties that shape urban lifestyle and create lasting value for generations.
+                            We are Dharashiv's leading real estate developers, delivering thoughtfully designed, premium properties that shape urban lifestyle and create lasting value for generations.
                         </p>
                         
                         <!-- Features List -->
@@ -218,11 +222,12 @@
                             Do good. <span class="text-gradient">Do well.</span>
                         </h2>
                         <p class="section-description lead text-muted mb-4">
-                            We are committed to elevating the living experience while emphasizing the importance of creating a positive impact on the environment and society through sustainable development practices.
+                            We envision a future where every structure enhances the way we live — creating lasting value for people, the environment, and society through sustainable innovation.
                         </p>
                         
                         <!-- Values Grid -->
                         <div class="row g-3 mb-4">
+                            
                             <div class="col-6">
                                 <div class="value-card bg-white rounded-3 p-3 text-center shadow-sm h-100">
                                     <i class="bi bi-heart-fill text-primary fs-3 mb-2"></i>
@@ -260,7 +265,7 @@
                             <div class="col-6">
                                 <div class="purpose-image position-relative overflow-hidden rounded-4 shadow-lg">
                                     <img src="img/1000963904.jpg" 
-                                         alt="Our Story" class="img-fluid w-100 h-100 object-fit-cover">
+                                         alt="Our Story" class="img-fluid w-100 h-100 object-fit-cover" loading="lazy" decoding="async">
                                     <div class="image-overlay position-absolute bottom-0 start-0 end-0 p-4 d-flex align-items-end">
                                         <a href="#our-story" class="btn btn-outline-light rounded-pill px-4 story-impact-btn">
                                             Our Story <i class="bi bi-arrow-right ms-2"></i>
@@ -271,7 +276,7 @@
                             <div class="col-6">
                                 <div class="purpose-image position-relative overflow-hidden rounded-4 shadow-lg">
                                     <img src="img/1000963906.jpg" 
-                                         alt="Our Impact" class="img-fluid w-100 h-100 object-fit-cover">
+                                         alt="Our Impact" class="img-fluid w-100 h-100 object-fit-cover" loading="lazy" decoding="async">
                                     <div class="image-overlay position-absolute bottom-0 start-0 end-0 p-4 d-flex align-items-end">
                                         <a href="#our-impact" class="btn btn-outline-light rounded-pill px-4 story-impact-btn">
                                             Our Impact <i class="bi bi-arrow-right ms-2"></i>
@@ -301,21 +306,21 @@
             
             <div class="row g-4">
                 <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
-                    <div class="property-card bg-white overflow-hidden h-100">
+                    <div class="property-card bg-white overflow-hidden h-100" data-property="naikwadi-mall">
                         <div class="property-image position-relative overflow-hidden">
-                            <img src="img/1000963907.jpg" 
-                                 alt="Luxury Residences" class="img-fluid w-100 h-100 object-fit-cover">
+                            <img src="img/Naikwadi Mall.jpg" 
+                                 alt="Naikwadi Mall" class="img-fluid w-100 h-100 object-fit-cover" loading="lazy" decoding="async">
                             <div class="property-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
-                                <button class="btn btn-light">
+                                <button class="btn btn-light view-details-btn">
                                     <i class="bi bi-eye me-2"></i>View Details
                                 </button>
                             </div>
                         </div>
                         <div class="property-info p-4">
-                            <h5 class="fw-bold mb-2">Luxury Residences</h5>
+                            <h5 class="fw-bold mb-2">Naikwadi Mall</h5>
                             <p class="text-muted mb-3">Premium Location</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <span class="badge bg-primary bg-opacity-10 text-primary">Residential</span>
+                                <span class="badge bg-primary bg-opacity-10 text-primary">City Mall</span>
                                 <small class="text-muted">Starting ₹2.5 Cr</small>
                             </div>
                         </div>
@@ -323,18 +328,18 @@
                     </div>
                     
                 <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
-                    <div class="property-card bg-white overflow-hidden h-100">
+                    <div class="property-card bg-white overflow-hidden h-100" data-property="patil-hospital">
                         <div class="property-image position-relative overflow-hidden">
-                            <img src="img/1000963908.jpg" 
-                                 alt="World Towers" class="img-fluid w-100 h-100 object-fit-cover">
+                            <img src="img/PATIL HOSPITAL.jpg" 
+                                 alt="Patil Hospital" class="img-fluid w-100 h-100 object-fit-cover" loading="lazy" decoding="async">
                             <div class="property-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
-                                <button class="btn btn-light">
+                                <button class="btn btn-light view-details-btn">
                                     <i class="bi bi-eye me-2"></i>View Details
                                 </button>
                             </div>
                         </div>
                         <div class="property-info p-4">
-                            <h5 class="fw-bold mb-2">World Towers</h5>
+                            <h5 class="fw-bold mb-2">Patil Hospital</h5>
                             <p class="text-muted mb-3">Business District</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <span class="badge bg-success bg-opacity-10 text-success">Commercial</span>
@@ -345,18 +350,18 @@
                     </div>
                     
                 <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
-                    <div class="property-card bg-white overflow-hidden h-100">
+                    <div class="property-card bg-white overflow-hidden h-100" data-property="swapnapurti-house">
                         <div class="property-image position-relative overflow-hidden">
-                            <img src="img/1000963909.jpg" 
-                                 alt="Trump Tower" class="img-fluid w-100 h-100 object-fit-cover">
+                            <img src="img/Swapnapurti House luxary .jpg" 
+                                 alt="Swapnapurti House Luxury" class="img-fluid w-100 h-100 object-fit-cover" loading="lazy" decoding="async">
                             <div class="property-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
-                                <button class="btn btn-light">
+                                <button class="btn btn-light view-details-btn">
                                     <i class="bi bi-eye me-2"></i>View Details
                                 </button>
                             </div>
                         </div>
                         <div class="property-info p-4">
-                            <h5 class="fw-bold mb-2">Trump Tower</h5>
+                            <h5 class="fw-bold mb-2">Swapnapurti House Luxury</h5>
                             <p class="text-muted mb-3">Luxury District</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <span class="badge bg-warning bg-opacity-10 text-warning">Premium</span>
@@ -367,12 +372,12 @@
                     </div>
                     
                 <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">
-                    <div class="property-card bg-white overflow-hidden h-100">
+                    <div class="property-card bg-white overflow-hidden h-100" data-property="luxury-bellagio">
                         <div class="property-image position-relative overflow-hidden">
                             <img src="img/1000963910.jpg" 
-                                 alt="Luxury Bellagio" class="img-fluid w-100 h-100 object-fit-cover">
+                                 alt="Luxury Bellagio" class="img-fluid w-100 h-100 object-fit-cover" loading="lazy" decoding="async">
                             <div class="property-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
-                                <button class="btn btn-light">
+                                <button class="btn btn-light view-details-btn">
                                     <i class="bi bi-eye me-2"></i>View Details
                                 </button>
                             </div>
@@ -485,37 +490,116 @@
                     Our Brands
                 </span>
                 <h2 class="section-title display-5 fw-bold mb-4">
-                    Trusted <span class="text-gradient">Partners</span>
+                    Our <span class="text-gradient">Service  </span>Channels
                 </h2>
                 <p class="lead text-muted">Collaborating with industry leaders to deliver exceptional results</p>
             </div>
             
             <div class="row justify-content-center align-items-center g-4">
+                
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
                     <div class="brand-item text-center p-4">
                         <div class="brand-logo-container bg-white p-4 mb-3">
-                            <i class="bi bi-building-fill-gear text-primary" style="font-size: 3rem;"></i>
+                            <img src="img/Logo_2__1_-removebg-preview (2).png" alt="Ujjal Nirman Solar Logo" style="height: 60px;" loading="lazy" decoding="async">
                         </div>
-                        <h5 class="fw-bold mb-2">LUXE</h5>
-                        <p class="text-muted mb-0">Premium Developments</p>
+                        <h5 class="fw-bold mb-2">Ujjal Nirman Solar</h5>
+                        <p class="text-muted mb-0">Clean, efficient solar power for homes and businesses.</p>
+                    
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
                     <div class="brand-item text-center p-4">
                         <div class="brand-logo-container bg-white p-4 mb-3">
-                            <i class="bi bi-gem text-primary" style="font-size: 3rem;"></i>
+                            <img src="img/Logo_2__1_-removebg-preview.png" alt="SynapseGrid Solutions Logo" style="height: 60px;" loading="lazy" decoding="async">
                         </div>
-                        <h5 class="fw-bold mb-2">LUXE LUXURY</h5>
-                        <p class="text-muted mb-0">Ultra-Premium Properties</p>
+                        <h5 class="fw-bold mb-2">SynapseGrid Solutions</h5>
+                        <p class="text-muted mb-0">Smart energy systems and grid integration.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
                     <div class="brand-item text-center p-4">
                         <div class="brand-logo-container bg-white p-4 mb-3">
-                            <i class="bi bi-tree-fill text-primary" style="font-size: 3rem;"></i>
+                            <img src="img/logo_3-removebg-preview.png" alt="Ujjwal Nirman Vidyut Logo" style="height: 60px;" loading="lazy" decoding="async">
                         </div>
-                        <h5 class="fw-bold mb-2">LUXE GREEN</h5>
-                        <p class="text-muted mb-0">Sustainable Communities</p>
+                        <h5 class="fw-bold mb-2">Ujjwal Nirman Vidyut</h5>
+                        <p class="text-muted mb-0">Reliable power distribution and services.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founders Section -->
+    <section id="founders" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="800">
+                <span class="section-tag badge bg-primary text-white px-3 py-2 mb-3">
+                    Our Founders
+                </span>
+                <h2 class="section-title display-5 fw-bold mb-4">
+                    Meet the <span class="text-gradient">Visionaries</span>
+                </h2>
+                <p class="lead text-muted">The driving force behind Ujjwal Nirman Pvt. Ltd., Dharashiv</p>
+            </div>
+
+            <div class="row justify-content-center g-4">
+                <!-- Founder 1 -->
+                <div class="col-lg-5 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+                    <div class="founder-card bg-white overflow-hidden h-100">
+                        <div class="founder-image-container position-relative overflow-hidden">
+                            <img src="img/DSC03447.jpg" 
+                                 alt="Founder 1" class="founder-image" loading="lazy" decoding="async">
+                            <div class="founder-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                                <div class="founder-social-links d-flex gap-3">
+                                    <a href="#" class="social-link">
+                                        <i class="bi bi-linkedin"></i>
+                                    </a>
+                                    <a href="#" class="social-link">
+                                        <i class="bi bi-twitter"></i>
+                                    </a>
+                                    <a href="#" class="social-link">
+                                        <i class="bi bi-envelope"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="founder-info">
+                            <h5 class="fw-bold mb-2">Jayesh Patil</h5>
+                            <p class="text-primary mb-3 fw-semibold">Co-Founder & Managing Director</p>
+                            <p class="card-text small text-secondary mb-0">
+                                With over 15 years of experience in civil engineering and project management, Jayesh leads the company with unwavering commitment to quality and innovation. His vision drives our mission to create exceptional living spaces.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Founder 2 -->
+                <div class="col-lg-5 col-md-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+                    <div class="founder-card bg-white overflow-hidden h-100">
+                        <div class="founder-image-container position-relative overflow-hidden">
+                            <img src="img/DSC03465.jpg" 
+                                 alt="Founder 2" class="founder-image" loading="lazy" decoding="async">
+                            <div class="founder-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                                <div class="founder-social-links d-flex gap-3">
+                                    <a href="#" class="social-link">
+                                        <i class="bi bi-linkedin"></i>
+                                    </a>
+                                    <a href="#" class="social-link">
+                                        <i class="bi bi-twitter"></i>
+                                    </a>
+                                    <a href="#" class="social-link">
+                                        <i class="bi bi-envelope"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="founder-info">
+                            <h5 class="fw-bold mb-2">Vikram Naik</h5>
+                            <p class="text-primary mb-3 fw-semibold">Co-Founder & Technical Head</p>
+                            <p class="card-text small text-secondary mb-0">
+                                A visionary in modern construction techniques and sustainable development, Vikram ensures every project meets the highest standards of safety, sustainability, and architectural excellence.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -594,7 +678,7 @@
             <div class="footer-bottom border-top border-secondary pt-4">
                 <div class="row align-items-center">
                     <div class="col-md-6">
-                        <p class="mb-0 text-muted">&copy; 2025 Ujjwal Nirman Pvt Ltd. All Rights Reserved.</p>
+                        <p class="mb-0 text-muted">&copy; 2025 SynapseGrid Solutions. All Rights Reserved.</p>
                     </div>
                     <div class="col-md-6 text-md-end">
                         <p class="mb-0 text-muted">Designed with <i class="bi bi-heart-fill text-danger"></i> for excellence</p>
